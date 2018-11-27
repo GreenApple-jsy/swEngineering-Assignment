@@ -3,6 +3,7 @@ package sw_e;
 import java.util.Scanner;
 import sw_e.Main_Contacts;
 import sw_e.main_memo;
+import sw_e.Main_Appointment;
 
 public class PersonalInformation {
 	public static void main(String[] args) {
@@ -11,8 +12,7 @@ public class PersonalInformation {
 		
 		while(option_choice != 5) {
 			System.out.println("원하는 기능을 숫자로 입력하세요.\n1. Contacts 2. To-do list 3. Appointment 4. Memo 5. Exit");
-			option_choice = scanner.nextInt();
-			
+				 option_choice = scanner.nextInt();
 			switch (option_choice) {
 				case 1:
 					Main_Contacts.main(args);
@@ -24,11 +24,12 @@ public class PersonalInformation {
 					break;
 					
 				case 3:
+					Main_Appointment.main(args);
 					//Appointment
 					break;
 					
 				case 4:
-					main_memo memo = new main_memo()
+					main_memo memo = new main_memo();
 					memo.main(args);
 					break;
 			

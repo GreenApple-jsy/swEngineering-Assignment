@@ -3,6 +3,7 @@ package sw_e;
 import java.util.Scanner;
 
 public class Main_Contacts {
+	static Scanner sc= new Scanner(System.in); 
 	static class ContactM {
 		String name, phone, email;
 		public ContactM(String name, String phone, String email) {
@@ -12,7 +13,7 @@ public class Main_Contacts {
 		}
 	}
 	
-	public static Scanner sc= new Scanner(System.in); 
+	
 	public static final int CREATE = 1;
 	public static final int VIEW = 2;
 	public static final int UPDATE = 3;
@@ -159,6 +160,6 @@ public class Main_Contacts {
 				System.out.println("메인 메뉴로 돌아갑니다.");
 				
 		}
-		sc.close();
+		//sc.close();
 	}
 }

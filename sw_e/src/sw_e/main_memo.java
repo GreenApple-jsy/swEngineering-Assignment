@@ -5,23 +5,23 @@ import java.util.Scanner;
 
 // 제목 없을때 구현하기
 public class main_memo {
+	static Scanner s = new Scanner(System.in);
 	public static void main(String args[]) {
 		Select_m();
 	}
-
 		static void Select_m(){
 			File file = new File("c://Example//File");
 			if(!file.exists()){
 	            file.mkdirs();
 	        }
-			Scanner s = new Scanner(System.in);
-			System.out.println("1. 메모 생성");
-			System.out.println("2. 메모 보기");
-			System.out.println("3. 메모 수정");
-			System.out.println("4. 메모 삭제");
-			System.out.println("5. 메인으로 돌아가기");
-			int num = s.nextInt();
+			int num = 0;
 			while (num !=5) {
+				System.out.println("1. 메모 생성");
+				System.out.println("2. 메모 보기");
+				System.out.println("3. 메모 수정");
+				System.out.println("4. 메모 삭제");
+				System.out.println("5. 메인으로 돌아가기");
+				num = s.nextInt();
 				switch (num){
 					case 1:
 						Create_m();
@@ -52,20 +52,16 @@ public class main_memo {
 						String title2 = s3.nextLine();
 						Delete_m(title2);
 						break;
+					case 5:
+						System.out.println("메모 기능을 종료합니다.");//5번 임시로 내가 추가했음.
+						break;
 				}
-				System.out.println("1번:메모 생성");
-				System.out.println("2번:메모 보기");
-				System.out.println("3번:메모 수정");
-				System.out.println("4번:메모 삭제");
-				System.out.println("5번:메인으로 가기");
-				num = s.nextInt();
 			}
-			s.close();
+			//s.close();
 			System.exit(0);
 	}
 
 	static void Create_m(){
-		 Scanner s = new Scanner(System.in);
 		 BufferedWriter writer = null;
 		        try {
 		        	System.out.println("날짜를 입력하세요(ex,2018년 11월 20일 오후 2시 20분의 경우: 2018 11 20 14 20로 입력함");
@@ -99,7 +95,6 @@ public class main_memo {
 		        }
 		    }
 	static int View2_m(){
-		 Scanner s = new Scanner(System.in);
 			File file1 = new File("c://Example//File//");
 		    File[] files = file1.listFiles();
 		    if (null != files) {
@@ -147,7 +142,6 @@ public class main_memo {
 	            e.printStackTrace();
 	       }
 		try {
-        	Scanner s = new Scanner(System.in);
         	System.out.println("날짜를 입력하세요(ex,2018년 11월 20일 오후 2시 20분의 경우: 2018 11 20 14 20로 입력함");
             String date = s.nextLine();
             System.out.println("제목을 입력하세요");
