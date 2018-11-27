@@ -2,6 +2,7 @@ package sw_e;
 
 import java.util.Scanner;
 import sw_e.Main_Contacts;
+import sw_e.main_memo;
 
 public class PersonalInformation {
 	public static void main(String[] args) {
@@ -27,7 +28,8 @@ public class PersonalInformation {
 					break;
 					
 				case 4:
-					//Memo
+					main_memo memo = new main_memo()
+					memo.main(args);
 					break;
 			
 				case 5://종료의 경우
