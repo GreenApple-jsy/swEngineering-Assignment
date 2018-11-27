@@ -1,6 +1,7 @@
 package sw_e;
 
 import java.util.Scanner;
+import sw_e.Main_Contacts;
 
 public class PersonalInformation {
 	public static void main(String[] args) {
@@ -13,6 +14,7 @@ public class PersonalInformation {
 			
 			switch (option_choice) {
 				case 1:
+					Main_Contacts.main(args);
 					//Contacts
 					break;
 					
