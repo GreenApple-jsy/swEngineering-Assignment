@@ -3,7 +3,7 @@ package sw_e;
 import java.io.*;
 import java.util.Scanner;
 
-// ì œëª© ì—†ì„ë•Œ êµ¬í˜„í•˜ê¸°
+// Á¦¸ñ ¾øÀ»¶§ ±¸ÇöÇÏ±â
 public class main_memo {
 	public static void main(String args[]) {
 		Select_m();
@@ -15,11 +15,11 @@ public class main_memo {
 	            file.mkdirs();
 	        }
 			Scanner s = new Scanner(System.in);
-			System.out.println("1. ë©”ëª¨ ìƒì„±");
-			System.out.println("2. ë©”ëª¨ ë³´ê¸°");
-			System.out.println("3. ë©”ëª¨ ìˆ˜ì •");
-			System.out.println("4. ë©”ëª¨ ì‚­ì œ");
-			System.out.println("5. ë©”ì¸ìœ¼ë¡œ ëŒì•„ê°€ê¸°");
+			System.out.println("1. ¸Ş¸ğ »ı¼º");
+			System.out.println("2. ¸Ş¸ğ º¸±â");
+			System.out.println("3. ¸Ş¸ğ ¼öÁ¤");
+			System.out.println("4. ¸Ş¸ğ »èÁ¦");
+			System.out.println("5. ¸ŞÀÎÀ¸·Î µ¹¾Æ°¡±â");
 			int num = s.nextInt();
 			while (num !=5) {
 				switch (num){
@@ -29,7 +29,7 @@ public class main_memo {
 					case 2:
 						Scanner s1 = new Scanner(System.in);
 						if (View2_m()>0) {
-							System.out.println("íŠ¹ì • ë©”ëª¨ì˜ ë‚´ìš©ì„ ë³´ì‹œê² ìŠµë‹ˆê¹Œ?(yesì¸ê²½ìš°: yes ì…ë ¥í›„ ì—”í„°ì¹˜ê³  ë©”ëª¨ì˜ ì œëª©ì„ ì…ë ¥í•˜ì„¸ìš”, noì¸ ê²½ìš°:noë¥¼ ì…ë ¥í•˜ì„¸ìš”)");
+							System.out.println("Æ¯Á¤ ¸Ş¸ğÀÇ ³»¿ëÀ» º¸½Ã°Ú½À´Ï±î?(yesÀÎ°æ¿ì: yes ÀÔ·ÂÈÄ ¿£ÅÍÄ¡°í ¸Ş¸ğÀÇ Á¦¸ñÀ» ÀÔ·ÂÇÏ¼¼¿ä, noÀÎ °æ¿ì:no¸¦ ÀÔ·ÂÇÏ¼¼¿ä)");
 						    String ans = s1.nextLine();
 						    if( ans.equals("yes")) {
 						    	String title = s1.nextLine();
@@ -37,27 +37,27 @@ public class main_memo {
 						    }
 						}
 						else {
-					    	System.out.println("ìƒì„±ëœ ë©”ëª¨ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
+					    	System.out.println("»ı¼ºµÈ ¸Ş¸ğ°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
 					    }
 						break;
 					case 3:
 						Scanner s2 = new Scanner(System.in);
-						System.out.println("ìˆ˜ì •í•  ë©”ëª¨ì˜ ì œëª©ì„ ì…ë ¥í•˜ì„¸ìš”");
+						System.out.println("¼öÁ¤ÇÒ ¸Ş¸ğÀÇ Á¦¸ñÀ» ÀÔ·ÂÇÏ¼¼¿ä");
 						String title = s2.nextLine();
 						Update_m(title);
 						break;
 					case 4:
 						Scanner s3 = new Scanner(System.in);
-						System.out.println("ì‚­ì œí•  ë©”ëª¨ì˜ ì œëª©ì„ ì…ë ¥í•˜ì„¸ìš”");
+						System.out.println("»èÁ¦ÇÒ ¸Ş¸ğÀÇ Á¦¸ñÀ» ÀÔ·ÂÇÏ¼¼¿ä");
 						String title2 = s3.nextLine();
 						Delete_m(title2);
 						break;
 				}
-				System.out.println("1ë²ˆ:ë©”ëª¨ ìƒì„±");
-				System.out.println("2ë²ˆ:ë©”ëª¨ ë³´ê¸°");
-				System.out.println("3ë²ˆ:ë©”ëª¨ ìˆ˜ì •");
-				System.out.println("4ë²ˆ:ë©”ëª¨ ì‚­ì œ");
-				System.out.println("5ë²ˆ:ë©”ì¸ìœ¼ë¡œ ê°€ê¸°");
+				System.out.println("1¹ø:¸Ş¸ğ »ı¼º");
+				System.out.println("2¹ø:¸Ş¸ğ º¸±â");
+				System.out.println("3¹ø:¸Ş¸ğ ¼öÁ¤");
+				System.out.println("4¹ø:¸Ş¸ğ »èÁ¦");
+				System.out.println("5¹ø:¸ŞÀÎÀ¸·Î °¡±â");
 				num = s.nextInt();
 			}
 			s.close();
@@ -68,9 +68,9 @@ public class main_memo {
 		 Scanner s = new Scanner(System.in);
 		 BufferedWriter writer = null;
 		        try {
-		        	System.out.println("ë‚ ì§œë¥¼ ì…ë ¥í•˜ì„¸ìš”(ex,2018ë…„ 11ì›” 20ì¼ ì˜¤í›„ 2ì‹œ 20ë¶„ì˜ ê²½ìš°: 2018 11 20 14 20ë¡œ ì…ë ¥í•¨");
+		        	System.out.println("³¯Â¥¸¦ ÀÔ·ÂÇÏ¼¼¿ä(ex,2018³â 11¿ù 20ÀÏ ¿ÀÈÄ 2½Ã 20ºĞÀÇ °æ¿ì: 2018 11 20 14 20·Î ÀÔ·ÂÇÔ");
 		            String date = s.nextLine();
-		            System.out.println("ì œëª©ì„ ì…ë ¥í•˜ì„¸ìš”");
+		            System.out.println("Á¦¸ñÀ» ÀÔ·ÂÇÏ¼¼¿ä");
 		            String title = s.nextLine();
 		            
 		            File file1 = new File("c://Example//File//");
@@ -78,14 +78,14 @@ public class main_memo {
 				    for (int fileIntList = 0; fileIntList < files.length; fileIntList++) {
 				         String ss = files[fileIntList].toString();
 				         if (title.equals(ss.substring(ss.lastIndexOf("\\") + 1, ss.length()-4))) {
-				             System.out.println("ë‹¤ë¥¸ ì œëª©ì„ ì…ë ¥í•˜ì„¸ìš”.");
+				             System.out.println("´Ù¸¥ Á¦¸ñÀ» ÀÔ·ÂÇÏ¼¼¿ä.");
 				         }
 				     }
 				    title = s.nextLine();
 		            writer = new BufferedWriter(new FileWriter("c://Example//File//"+ title + ".txt"));
-		        	writer.write("ë‚ ì§œ:" + date + "\r\n");
-		        	writer.write("ì œëª©:" + title + "\r\n");
-		            System.out.println("ë‚´ìš©ì„ ì…ë ¥í•˜ì„¸ìš”");
+		        	writer.write("³¯Â¥:" + date + "\r\n");
+		        	writer.write("Á¦¸ñ:" + title + "\r\n");
+		            System.out.println("³»¿ëÀ» ÀÔ·ÂÇÏ¼¼¿ä");
 		            String story = s.nextLine();
 		            while (!story.equals("store")){
 		            	writer.write( story + "\r\n");
@@ -148,14 +148,14 @@ public class main_memo {
 	       }
 		try {
         	Scanner s = new Scanner(System.in);
-        	System.out.println("ë‚ ì§œë¥¼ ì…ë ¥í•˜ì„¸ìš”(ex,2018ë…„ 11ì›” 20ì¼ ì˜¤í›„ 2ì‹œ 20ë¶„ì˜ ê²½ìš°: 2018 11 20 14 20ë¡œ ì…ë ¥í•¨");
+        	System.out.println("³¯Â¥¸¦ ÀÔ·ÂÇÏ¼¼¿ä(ex,2018³â 11¿ù 20ÀÏ ¿ÀÈÄ 2½Ã 20ºĞÀÇ °æ¿ì: 2018 11 20 14 20·Î ÀÔ·ÂÇÔ");
             String date = s.nextLine();
-            System.out.println("ì œëª©ì„ ì…ë ¥í•˜ì„¸ìš”");
+            System.out.println("Á¦¸ñÀ» ÀÔ·ÂÇÏ¼¼¿ä");
             String title1 = s.nextLine();
             writer = new BufferedWriter(new FileWriter("c://Example//File//"+ title1 + ".txt"));
-        	writer.write("ë‚ ì§œ:" + date + "\r\n");
-        	writer.write("ì œëª©:" + title1 + "\r\n");
-            System.out.println("ë‚´ìš©ì„ ì…ë ¥í•˜ì„¸ìš”");
+        	writer.write("³¯Â¥:" + date + "\r\n");
+        	writer.write("Á¦¸ñ:" + title1 + "\r\n");
+            System.out.println("³»¿ëÀ» ÀÔ·ÂÇÏ¼¼¿ä");
             String story = s.nextLine();
             while (!story.equals("store")){
             	writer.write( story + "\r\n");
@@ -172,12 +172,12 @@ public class main_memo {
 		File file1 = new File("c://Example//File//"+ title+ ".txt");
         if( file1.exists() ){
             if(file1.delete()){
-                System.out.println("íŒŒì¼ì‚­ì œë¥¼ ì„±ê³µí•˜ì˜€ìŠµë‹ˆë‹¤.");
+                System.out.println("ÆÄÀÏ»èÁ¦¸¦ ¼º°øÇÏ¿´½À´Ï´Ù.");
             }else{
-                System.out.println("íŒŒì¼ì‚­ì œë¥¼ ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.");
+                System.out.println("ÆÄÀÏ»èÁ¦¸¦ ½ÇÆĞÇÏ¿´½À´Ï´Ù.");
             }
         }else{
-            System.out.println("íŒŒì¼ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
+            System.out.println("ÆÄÀÏÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
         }
 	}
 }
