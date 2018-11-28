@@ -65,60 +65,69 @@ public class Main_Contacts {
    
    public static void update() {
       System.out.println("-------연락처 수정-------");
-      System.out.print("이름>> ");
-      String name = sc.next();
-      if(search(name)==-1) {
-         System.out.println("찾으시는 "+name+ "의 연락처는 존재하지 않습니다.");
-      }
-      else {
-         System.out.println("수정하고 싶은 항목");
-         System.out.println("1)이름   2)전화번호   3)이메일");
-         int num = sc.nextInt();
-         if(num==1) {
-            System.out.print("이름>> ");
-            String rname = sc.next();
-            contact[search(name)].name = rname;
-         }
-         else if(num==2) {
-            System.out.print("전화번호>> ");
-            String rphone = sc.next();
-            contact[search(name)].phone = rphone;
-         }
-         else if(num==3) {
-            System.out.print("이메일>> ");
-            String remail = sc.next();
-            contact[search(name)].email = remail;
-         }
+      if(index==0) {
+          System.out.println("저장된 연락처가 없습니다.");
+       }
+      else if(index>0) {
+    	  System.out.print("이름>> ");
+    	  String name = sc.next();
+    	  if(search(name)==-1) {
+    		  System.out.println("찾으시는 "+name+ "의 연락처는 존재하지 않습니다.");
+    	  }
+    	  else {
+    		  System.out.println("수정하고 싶은 항목");
+    		  System.out.println("1)이름   2)전화번호   3)이메일");
+    		  int num = sc.nextInt();
+    		  if(num==1) {
+    			  System.out.print("이름>> ");
+    			  String rname = sc.next();
+    			  contact[search(name)].name = rname;
+    		  }
+    		  else if(num==2) {
+    			  System.out.print("전화번호>> ");
+    			  String rphone = sc.next();
+    			  contact[search(name)].phone = rphone;
+    		  }
+    		  else if(num==3) {
+    			  System.out.print("이메일>> ");
+    			  String remail = sc.next();
+    			  contact[search(name)].email = remail;
+    		  }
+    	  }
       }
    }
    
    public static void delete() {
       System.out.println("-------연락처 삭제-------");
-      System.out.print("이름>> ");
-      String name = sc.next();
+      if(index==0) {
+          System.out.println("저장된 연락처가 없습니다.");
+       }
+      else if(index>0) {
+    	  System.out.print("이름>> ");
+    	  String name = sc.next();
       
-      if(search(name)==-1) {
-         System.out.println("찾으시는 "+name+ "의 연락처는 존재하지 않습니다.");
-      }
-      else {
-      
-         System.out.println("삭제하려는 "+name+ "의 연락처");
-         System.out.println("이름: "+contact[search(name)].name);
-         System.out.println("전화번호: "+contact[search(name)].phone);
-         System.out.println("이메일: "+contact[search(name)].email);
-         System.out.println("1)예   2)아니오");
-         int num = sc.nextInt();
-         if(num==1) {
-            for(int i=search(name); i<index-1; i++) {
-               contact[i].name = contact[i+1].name;
-               contact[i].phone = contact[i+1].phone;
-               contact[i].email = contact[i+1].email;
-            }
-            index -= 1;
-         }
-         else if(num==2) {
-            System.out.println(name+ "의 연락처를 삭제하지 않고 메뉴로 이동합니다.");
-         }
+    	  if(search(name)==-1) {
+    		  System.out.println("찾으시는 "+name+ "의 연락처는 존재하지 않습니다.");
+    	  }
+    	  else {
+    		  System.out.println("삭제하려는 "+name+ "의 연락처");
+    		  System.out.println("이름: "+contact[search(name)].name);
+    		  System.out.println("전화번호: "+contact[search(name)].phone);
+    		  System.out.println("이메일: "+contact[search(name)].email);
+    		  System.out.println("1)예   2)아니오");
+    		  int num = sc.nextInt();
+    		  if(num==1) {
+    			  for(int i=search(name); i<index-1; i++) {
+    				  contact[i].name = contact[i+1].name;
+    				  contact[i].phone = contact[i+1].phone;
+    				  contact[i].email = contact[i+1].email;
+    			  }
+    			  index -= 1;
+    		  }
+    		  else if(num==2) {
+    			  System.out.println(name+ "의 연락처를 삭제하지 않고 메뉴로 이동합니다.");
+    		  }
+    	  }
       }
    }
    
