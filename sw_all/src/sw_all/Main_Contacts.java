@@ -157,7 +157,7 @@ public class Main_Contacts {
          else if(select.equals("4"))
             Main_Contacts.delete();
          else if(select.equals("5"))
-            System.out.println("메인 메뉴로 돌아갑니다.");
+            System.out.println("메인 메뉴로 돌아갑니다");
             
       }
       //sc.close();
