@@ -3,7 +3,7 @@ package sw_all;
 import java.util.Scanner;
 //import sw_e.Main_Contacts;
 import sw_all.main_memo;
-//import sw_e.Main_Appointment;
+import sw_all.Main_Appointment;
 
 public class PersonalInformation {
    public static void main(String[] args) {
@@ -25,9 +25,8 @@ public class PersonalInformation {
             	System.out.println("아직 이 기능은 사용하실 수 없습니다.");
             	break;
                
-            case 3:
-               //Main_Appointment.main(args);
-               //Appointment
+            case 3://Appointment
+               Main_Appointment.main(args);
                break;
                
             case 4:
