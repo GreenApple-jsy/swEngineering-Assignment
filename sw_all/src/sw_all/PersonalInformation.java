@@ -2,7 +2,7 @@ package sw_all;
 
 import java.util.Scanner;
 //import sw_e.Main_Contacts;
-//import sw_e.main_memo;
+import sw_all.main_memo;
 //import sw_e.Main_Appointment;
 
 public class PersonalInformation {
@@ -29,8 +29,8 @@ public class PersonalInformation {
                break;
                
             case 4:
-               //main_memo memo = new main_memo();
-               //memo.main(args);
+               main_memo memo = new main_memo();
+               memo.main(args);
                break;
          
             case 5://종료의 경우
