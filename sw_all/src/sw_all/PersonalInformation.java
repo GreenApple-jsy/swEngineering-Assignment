@@ -15,7 +15,7 @@ public class PersonalInformation {
              option_choice = scanner.nextInt();
          switch (option_choice) {
             case 1:
-               //Main_Contacts.main(args);
+               Main_Contacts.main(args);
                //Contacts
                break;
                
