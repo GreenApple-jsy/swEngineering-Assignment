@@ -2,7 +2,7 @@ package sw_all;
 
 import java.util.Scanner;
 //import sw_e.Main_Contacts;
-import sw_all.main_memo;
+import sw_all.main_Memo;
 import sw_all.Main_Appointment;
 
 public class PersonalInformation {
@@ -30,7 +30,7 @@ public class PersonalInformation {
                break;
                
             case 4:
-               main_memo memo = new main_memo();
+               main_Memo memo = new main_Memo();
                memo.main(args);
                break;
          
