@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.Scanner;
 
 // 제목 없을때 구현하기
-public class main_Memo {
+public class Main_Memo {
    static Scanner s = new Scanner(System.in);
    public static void main(String args[]) {
       Select_m();
@@ -69,7 +69,7 @@ public class main_Memo {
             	  System.out.println("날짜를 입력하세요(ex,2018년 11월 20일 오후 2시 20분의 경우: 2018 11 20 14 20로 입력함)");
                   String date = s3.nextLine();
                   System.out.println("제목을 입력하세요");
-                  String title = s3.nextLine();
+                  String title = s2.nextLine();
                   File file1 = new File("c://Example//File//");
                   File[] files = file1.listFiles();
                   for (int fileIntList = 0; fileIntList < files.length; fileIntList++) {
@@ -102,7 +102,7 @@ public class main_Memo {
               for (int fileIntList = 0; fileIntList < files.length; fileIntList++) {
                   String ss = files[fileIntList].toString();
                   if (null != ss && ss.length() > 0) {
-                      System.out.println("File" + (fileIntList + 1) + " :" + ss.substring(ss.lastIndexOf("\\") + 1, ss.length()));
+                      System.out.println("File" + (fileIntList + 1) + " :" + ss.substring(ss.lastIndexOf("\\") + 1, ss.length()-4));
                   }
               }
               return files.length;
