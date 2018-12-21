@@ -1,6 +1,7 @@
 package sw_all;
 
 import java.util.Scanner;
+
 public class Main_Appointment {
    static Scanner scanner = new Scanner(System.in);
    static class appointment{
@@ -14,15 +15,15 @@ public class Main_Appointment {
    
    static int number = 0;
    static appointment ap[] = new appointment[100];
+   
    public static void main(String[] args) {
-      //Scanner scanner = new Scanner(System.in);
-      int a = 0;
-         while (a != 5 ) {
-            System.out.println("\n1번 : Create\n2번 : View\n3번 : Update\n4번 : Delete\n5번 : 메인 메뉴로 이동");
+      int user_choice = 0;
+         while (user_choice != 5 ) {
+            System.out.println("\nAppointment 옵션 메뉴입니다.\n1번 : Create\n2번 : View\n3번 : Update\n4번 : Delete\n5번 : 메인 메뉴로 이동");
             System.out.print("원하시는 기능을 숫자로 입력해주세요 : ");
-               a = scanner.nextInt();
+            user_choice = scanner.nextInt();
             
-            switch(a) {
+            switch(user_choice) {
             case 1:
                create();
                break;
@@ -43,40 +44,47 @@ public class Main_Appointment {
                break;
             }
          }
-      //scanner.close();
    }
    
    public static void create() {
-      //Scanner scanner = new Scanner(System.in);
       ap[number] = new appointment();
-      
+      int title_check = 0;
       System.out.print("Appointment의 Title을 입력하세요(옵션 메인으로 돌아가려면 back을 입력하세요): ");
       scanner.nextLine();
       String title = scanner.nextLine();
       if(!(title.equals("back"))) {
-         ap[number].title = title;
-         System.out.print("Appointment의 Date를 입력하세요(2019년 01월 23일 17시 23분의 경우 2019 01 23 17 23와 같이) : ");
-         int date = scanner.nextInt();
-         ap[number].date[0] = date;
-         date = scanner.nextInt();
-         ap[number].date[1] = date;
-         date = scanner.nextInt();
-         ap[number].date[2] = date; 
-         date = scanner.nextInt();
-         ap[number].date[3] = date;
-         date = scanner.nextInt();
-         ap[number].date[4] = date;
-         System.out.print("Appointment를 누구와 함께하는지 입력하세요 : ");
-         scanner.nextLine();
-         String persons = scanner.nextLine();
-         ap[number].persons =persons;
-         System.out.print("Appointment의 장소을 입력하세요 : ");
-         String  location = scanner.nextLine();
-         ap[number].location = location;
-         System.out.println(ap[number].title + " appointment가 성공적으로 저장되었습니다.");
-         number++;
+    	  for( title_check = 0; title_check < number; title_check++) {
+    		  if (ap[title_check].title.equals(title)) {
+    			  System.out.println("이미 있는 title입니다. 다시 Create 메뉴를 통해 입력하세요");
+    			  break;
+    		  }
+    	  }
+    	  if(title_check == number) {
+    		  ap[number].title = title;
+    	      System.out.print("Appointment의 Date를 입력하세요(2019년 01월 23일 17시 23분의 경우 2019 01 23 17 23와 같이) : ");
+    	      int date = scanner.nextInt();
+    	      ap[number].date[0] = date;
+    	      date = scanner.nextInt();
+    	      ap[number].date[1] = date;
+    	      date = scanner.nextInt();
+    	      ap[number].date[2] = date; 
+    	      date = scanner.nextInt();
+    	      ap[number].date[3] = date;
+    	      date = scanner.nextInt();
+    	      ap[number].date[4] = date;
+    	      System.out.print("Appointment를 누구와 함께하는지 입력하세요 : ");
+    	      scanner.nextLine();
+    	      String persons = scanner.nextLine();
+    	      ap[number].persons =persons;
+    	      System.out.print("Appointment의 장소을 입력하세요 : ");
+    	      String  location = scanner.nextLine();
+    	      ap[number].location = location;
+    	      System.out.println(ap[number].title + " appointment가 성공적으로 저장되었습니다.");
+    	      number++;
+    	  }
       }   
    }
+   
    public static void view() {
       if (number == 0)
          System.out.println("Appointment가 존재하지 않습니다.");
@@ -93,7 +101,6 @@ public class Main_Appointment {
    }
 
    public static void update() {
-      //Scanner scanner = new Scanner(System.in);
       int count = -1;
       int answer = 0;
       while(count == -1) {
@@ -155,9 +162,13 @@ public class Main_Appointment {
       }      
    }
    public static void delete() {
-      //Scanner scanner = new Scanner(System.in);
       int count = -1;
       int lastdelete = 0;
+      int answer = 0;
+      System.out.println("<<Title 목록>>");
+      for( int i = 0; i < number; i++) {
+    	 System.out.println(ap[i].title);
+      }
       while(count == -1) {
          System.out.print("삭제하고 싶은 Appointment의 title을 입력하세요(옵션 메인으로 돌아가려면 back을 입력하세요) : ");
          scanner.nextLine();
@@ -166,6 +177,10 @@ public class Main_Appointment {
             break;
          for(count = 0; count < number; count++) {
             if(ap[count].title.equals(title)) {
+            	System.out.print("정말 삭제하시겠습니까?(1:예  2:아니오) : ");
+            	answer = scanner.nextInt();
+            	if(answer != 1)
+            		break;
                for(int i = count; i<number - 1; i++)
                   ap[count] = ap[count + 1];
                number--;

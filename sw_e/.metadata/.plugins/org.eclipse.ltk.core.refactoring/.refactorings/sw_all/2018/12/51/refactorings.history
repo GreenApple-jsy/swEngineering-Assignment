@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;sw_all.main_memo&apos; to &apos;main_Memo&apos;&#x0D;&#x0A;- Original project: &apos;sw_all&apos;&#x0D;&#x0A;- Original element: &apos;sw_all.main_memo&apos;&#x0D;&#x0A;- Renamed element: &apos;sw_all.main_Memo&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;main_memo&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;sw_all{main_memo.java[main_memo" matchStrategy="1" name="main_Memo" qualified="false" references="true" similarDeclarations="false" stamp="1545197455828" textual="false" version="1.0"/>
-</session>
