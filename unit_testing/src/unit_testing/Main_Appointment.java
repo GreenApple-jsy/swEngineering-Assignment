@@ -149,7 +149,6 @@ public class Main_Appointment {
    public static int delete(String title) {
       int count = -1;
       int lastdelete = 0;
-      int answer = 0;
       while(count == -1) {
          if(title.equals("back"))
             break;
@@ -165,6 +164,7 @@ public class Main_Appointment {
          if(number == count && lastdelete != 1) {
             System.out.println("없는 title입니다. 다시 입력하세요 : ");
             count = -1;
+            return 2;//없는 타이틀
          }
       }
       return -1;//삭제 실패
