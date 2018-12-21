@@ -30,8 +30,12 @@ public class Main_Contacts {
       String phone = sc.next();
       System.out.print("ÀÌ¸ÞÀÏ>> ");
       String email = sc.next();
-      contact[index] = new ContactM(name, phone, email);
-      index++;
+      createGo(name,phone,email);
+   }
+   public static int createGo(String name, String phone, String email) {
+	      contact[index] = new ContactM(name, phone, email);
+	      index++;
+	      return index;
    }
    
    public static void view() {

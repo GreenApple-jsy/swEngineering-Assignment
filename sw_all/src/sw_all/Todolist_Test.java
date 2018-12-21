@@ -22,7 +22,7 @@ class TodolistTest{
 		createDate="2018 12 22 15 30";
 		dueDate="2018 12 30 12 30";
 		title="hi";
-		remainingTime=Todolist.calculateRemainingTime(createDate, dueDate);
+		remainingTime=Main_Todolist.calculateRemainingTime(createDate, dueDate);
 		descriptions.add("hello\n");
 		
 		Main_Todolist.todolists[listIndex++]= new newTodolist(createDate, dueDate, title, descriptions, remainingTime);
@@ -30,11 +30,11 @@ class TodolistTest{
 	
 	@Test
 	void testCalRemainingTime(){
-		assertTrue(Todolist.calculateRemainingTime(createDate, dueDate) == "마감까지 7일 9시간 0분 남았습니다.");
+		assertTrue(Main_Todolist.calculateRemainingTime(createDate, dueDate) == "마감까지 7일 9시간 0분 남았습니다.");
 	}
 	
 	@Test
 	void testsaveandCheckTitleOverlap() {
-		assertTrue(Todolist.checkTitleOverlap("hi") == true);
+		assertTrue(Main_Todolist.checkTitleOverlap("hi") == true);
 	}
 }

@@ -14,6 +14,8 @@ public class Main_Appointment {
    }
    
    static int number = 0;
+   static int delete_count = 0;
+   static int last_delete;
    static appointment ap[] = new appointment[100];
    
    public static void main(String[] args) {
@@ -47,7 +49,6 @@ public class Main_Appointment {
    }
    
    public static void create() {
-      ap[number] = new appointment();
       int title_check = 0;
       System.out.print("Appointment의 Title을 입력하세요(옵션 메인으로 돌아가려면 back을 입력하세요): ");
       scanner.nextLine();
@@ -60,27 +61,18 @@ public class Main_Appointment {
     		  }
     	  }
     	  if(title_check == number) {
-    		  ap[number].title = title;
     	      System.out.print("Appointment의 Date를 입력하세요(2019년 01월 23일 17시 23분의 경우 2019 01 23 17 23와 같이) : ");
+    	      int year = scanner.nextInt();
+    	      int month = scanner.nextInt();
     	      int date = scanner.nextInt();
-    	      ap[number].date[0] = date;
-    	      date = scanner.nextInt();
-    	      ap[number].date[1] = date;
-    	      date = scanner.nextInt();
-    	      ap[number].date[2] = date; 
-    	      date = scanner.nextInt();
-    	      ap[number].date[3] = date;
-    	      date = scanner.nextInt();
-    	      ap[number].date[4] = date;
+    	      int hour = scanner.nextInt();
+    	      int minute = scanner.nextInt();
     	      System.out.print("Appointment를 누구와 함께하는지 입력하세요 : ");
     	      scanner.nextLine();
     	      String persons = scanner.nextLine();
-    	      ap[number].persons =persons;
     	      System.out.print("Appointment의 장소을 입력하세요 : ");
     	      String  location = scanner.nextLine();
-    	      ap[number].location = location;
-    	      System.out.println(ap[number].title + " appointment가 성공적으로 저장되었습니다.");
-    	      number++;
+    	      createPush(title,year,month,date,hour,minute,persons,location);
     	  }
       }   
    }
@@ -162,38 +154,53 @@ public class Main_Appointment {
       }      
    }
    public static void delete() {
-      int count = -1;
-      int lastdelete = 0;
-      int answer = 0;
+      delete_count = -1;
       System.out.println("<<Title 목록>>");
       for( int i = 0; i < number; i++) {
     	 System.out.println(ap[i].title);
       }
       scanner.nextLine();
-      while(count == -1) {
+      while(delete_count == -1) {
          System.out.print("삭제하고 싶은 Appointment의 title을 입력하세요(옵션 메인으로 돌아가려면 back을 입력하세요) : ");
          String title = scanner.nextLine();
          if(title.equals("back"))
             break;
-         for(count = 0; count < number; count++) {
-            if(ap[count].title.equals(title)) {
-            	System.out.print("정말 삭제하시겠습니까?(1:예  2:아니오) : ");
-            	answer = scanner.nextInt();
-            	if(answer != 1)
-            		break;
-               for(int i = count; i<number - 1; i++)
-                  ap[count] = ap[count + 1];
-               number--;
-               System.out.println("삭제가 완료되었습니다.");
-               lastdelete = 1;
-               break;
-            }
-         }
-         if(number == count && lastdelete != 1) {
-            System.out.println("없는 title입니다. 다시 입력하세요");
-            count = -1;
-         }
+         deleteOut(title);
       }      
    }
-
+   
+   public static int createPush(String title, int year, int month, int date, int hour, int minute, String who, String where) {
+	      ap[number] = new appointment();
+	      
+	      ap[number].title = title;
+	      ap[number].date[0] = year;
+	      ap[number].date[1] = month;
+	      ap[number].date[2] = date; 
+	      ap[number].date[3] = hour;
+	      ap[number].date[4] = minute; 	  
+	      ap[number].persons = who;
+	      ap[number].location = where;
+	      number++;
+	      return number;//생성 성공	     
+	   }
+   
+   public static int deleteOut(String title) {
+	   last_delete = -1;   
+	         for(delete_count = 0; delete_count < number; delete_count++) {
+	            if(ap[delete_count].title.equals(title)) {
+	               for(int i = delete_count; i<number - 1; i++)
+	                  ap[delete_count] = ap[delete_count + 1];
+	               number--;
+	               last_delete = 1;
+	               return number;//삭제 성공
+	            }
+	         }
+	         if(number == delete_count && last_delete != 1) {
+	            System.out.println("없는 title입니다. 다시 입력하세요 : ");
+	            delete_count = -1;
+	            return -1;//없는 타이틀
+	         }
+	   return -2;//삭제 실패
+   }
+   
 }
