@@ -103,9 +103,9 @@ public class Main_Appointment {
    public static void update() {
       int count = -1;
       int answer = 0;
+      scanner.nextLine();
       while(count == -1) {
-         System.out.print("수정하고 싶은 Appointment의 title을 입력하세요(옵션 메인으로 돌아가려면 back을 입력하세요) : ");
-         scanner.nextLine();
+         System.out.print("\n수정하고 싶은 Appointment의 title을 입력하세요(옵션 메인으로 돌아가려면 back을 입력하세요) : ");
          String title = scanner.nextLine();
          if(title.equals("back"))
             break;
@@ -156,7 +156,7 @@ public class Main_Appointment {
             }
          }
          if(number == count) {
-            System.out.println("없는 title입니다. 다시 입력하세요 : ");
+            System.out.print("없는 title입니다.");
             count = -1;
          }
       }      
@@ -169,9 +169,9 @@ public class Main_Appointment {
       for( int i = 0; i < number; i++) {
     	 System.out.println(ap[i].title);
       }
+      scanner.nextLine();
       while(count == -1) {
          System.out.print("삭제하고 싶은 Appointment의 title을 입력하세요(옵션 메인으로 돌아가려면 back을 입력하세요) : ");
-         scanner.nextLine();
          String title = scanner.nextLine();
          if(title.equals("back"))
             break;
@@ -190,7 +190,7 @@ public class Main_Appointment {
             }
          }
          if(number == count && lastdelete != 1) {
-            System.out.println("없는 title입니다. 다시 입력하세요 : ");
+            System.out.println("없는 title입니다. 다시 입력하세요");
             count = -1;
          }
       }      
