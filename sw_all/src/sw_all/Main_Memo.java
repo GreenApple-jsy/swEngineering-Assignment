@@ -3,7 +3,6 @@ package sw_all;
 import java.io.*;
 import java.util.Scanner;
 
-// 제목 없을때 구현하기
 public class Main_Memo {
    static Scanner s = new Scanner(System.in);
    public static void main(String args[]) {
