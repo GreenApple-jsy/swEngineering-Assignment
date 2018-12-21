@@ -9,7 +9,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main_Todolist {
+public class Todolist {
 	static Scanner scanner = new Scanner(System.in);
 	public static int listIndex = 1;
 	public static int searchResult=0;
@@ -289,4 +289,3 @@ public class Main_Todolist {
 		}
 	}
 }
-
