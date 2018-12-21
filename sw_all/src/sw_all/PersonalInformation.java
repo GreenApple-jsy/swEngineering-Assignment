@@ -22,7 +22,6 @@ public class PersonalInformation {
             case 2:
             	//To-do list
             	Main_Todolist.main(args);
-            	System.out.println("아직 이 기능은 사용하실 수 없습니다.");
             	break;
                
             case 3://Appointment
